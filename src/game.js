@@ -1,23 +1,25 @@
 const ship = require("./ship");
-const gameboard = require("./gameboard");
+import gameboard from "./gameboard";
 const player = require("./player");
 const dom = require("./dom");
 
 const game = () => {
-  console.log("yup");
-  const player1 = player("player1");
-  const computer = player("computer");
+  let player1 = player("Player1");
+  let computer = player("Computer");
 
-  const playerboard = gameboard();
-  const computerboard = gameboard();
+  let playersboard = gameboard();
+  playersboard.init();
 
-  const ship1 = ship();
-  const ship2 = ship();
+  let computersboard = gameboard();
+  computersboard.init();
 
-  playerboard.placeShip(ship1, 1, 1);
-  computerboard.placeShip(ship2, 2, 2);
+  let ship1 = ship(2);
+  let ship2 = ship(5);
 
-  dom.displayBoard();
+  playersboard.placeShip(ship1, 1, 1);
+  computersboard.placeShip(ship2, 3, 3);
+
+  dom.displayBoard(playersboard, computersboard);
 };
 
 game();

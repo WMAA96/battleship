@@ -1,9 +1,10 @@
+const player = require("./player");
 const ship = require("./ship");
 
 const gameboard = () => {
-  board = [];
-  missedShots = [];
-  shipsContainer = [];
+  let board = [];
+  let missedShots = [];
+  let shipsContainer = [];
 
   const getMissedShots = () => missedShots;
 

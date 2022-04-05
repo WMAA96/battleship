@@ -4,6 +4,8 @@ const player = name => {
   this.name = name;
   alreadyHit = [];
 
+  const getPlayer = () => name;
+
   const attack = (x, y, gameboard) => {
     gameboard.recieveAttack(x, y);
   };
@@ -31,7 +33,7 @@ const player = name => {
     return false;
   };
 
-  return { attack, randomAttack };
+  return { attack, randomAttack, getPlayer };
 };
 
 module.exports = player;
